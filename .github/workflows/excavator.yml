@@ -1,0 +1,19 @@
+name: Excavator
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  excavate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ScoopInstaller/GithubActions@main
+        env:
+          SKIP_UPDATED: "1"

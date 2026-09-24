@@ -1,0 +1,27 @@
+{
+    "version": "0.2.4",
+    "description": "Floating desktop widget that shows AI coding tool usage quotas (Claude Code, Codex, Copilot, Cursor, and more)",
+    "homepage": "https://github.com/izzet/quotabubble",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/izzet/quotabubble/releases/download/v0.2.4/QuotaBubble-windows-x64.zip",
+            "hash": "2eeab14f93bac09d3cfb12ed25b8d9595fd86919ab24b926b219da4eca96a8c8"
+        }
+    },
+    "shortcuts": [
+        [
+            "QuotaBubble.exe",
+            "QuotaBubble"
+        ]
+    ],
+    "pre_uninstall": "Stop-Process -Name QuotaBubble -ErrorAction SilentlyContinue",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/izzet/quotabubble/releases/download/v$version/QuotaBubble-windows-x64.zip"
+            }
+        }
+    }
+}
